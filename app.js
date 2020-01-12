@@ -1,8 +1,12 @@
 // query selectors
 const timer = document.querySelector(".timer");
+const title = document.querySelector("h1");
+const originalTitle = title.textContent;
 
 // event listener on page load
 document.addEventListener("DOMContentLoaded", startTimer);
+title.addEventListener("mouseenter", addSpans);
+title.addEventListener("mouseleave", removeSpans);
 
 // functions
 
@@ -61,14 +65,24 @@ function calcNow() {
     diffHours = diffHours >= 10 ? diffHours : `0` + diffHours;
     diffMinutes = diffMinutes >= 10 ? diffMinutes : `0` + diffMinutes;
     diffSeconds = diffSeconds >= 10 ? diffSeconds : `0` + diffSeconds;
-    timer.textContent = `${diffDays} Days, ${diffHours} Hours, ${diffMinutes} Minutes, ${diffSeconds} Seconds`;
+    timer.innerHTML = `<span class="number-block" id="block-1">${diffDays} Days</span><span class="number-block" id="block-2">${diffHours} Hours</span><span class="number-block" id="block-3">${diffMinutes} Minutes</span><span class="number-block" id="block-4">${diffSeconds} Seconds</span>`;
   }
 }
 
 function startTimer() {
+  calcNow()
   setInterval(calcNow, 1000);
 }
 
 function addSpans() {
-  console.log("virgo");
+  const titleArr = Array.from(originalTitle);
+  let spans = "";
+  titleArr.forEach(letter => {
+    spans += `<span class="span-letter">${letter}</span>`;
+  });
+  title.innerHTML = spans;
+}
+
+function removeSpans() {
+  title.innerHTML = originalTitle;
 }
