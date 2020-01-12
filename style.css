@@ -6,23 +6,24 @@
 
 html {
   height: 100%;
+  font-size: 24px;
 }
 
 body {
+  min-height: 100%;
   background: #333;
   font-family: "Shadows Into Light", cursive;
   color: white;
-  min-height: 100%;
 }
 
-h1,
-.span-letter {
-  font-size: 2rem;
+h1 {
+  font-size: 3rem;
+  text-align: center;
 }
 
 .span-letter {
   display: inline-block;
-  animation: shake 0.5s;
+  animation: shake 1s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
@@ -33,10 +34,15 @@ h1,
   animation-direction: alternate;
 }
 
+.timer {
+  display: flex;
+  justify-content: center;
+}
 .number-block {
-  font-size: 2rem;
+  text-align: center;
+  font-size: 2.4rem;
+  flex:1;
   position: relative;
-  background-attachment: fixed;
 }
 .number-block::before {
   content: "";
@@ -48,25 +54,18 @@ h1,
 }
 
 #block-1 {
-  box-shadow: inset 0 0 10px 10px rgba(211, 21, 21, 0.5);
+  box-shadow: inset 0 0 3rem rgba(211, 21, 21, 0.5);
 }
 #block-2 {
-  box-shadow: inset 0 0 10px 10px rgba(21, 135, 211, 0.5);
+  box-shadow: inset 0 0 3rem rgba(21, 135, 211, 0.5);
 }
 #block-3 {
-  box-shadow: inset 0 0 10px 10px rgba(8, 236, 111, 0.5);
+  box-shadow: inset 0 0 3rem rgba(8, 236, 111, 0.5);
 }
 #block-4 {
-  box-shadow: inset 0 0 10px 10px rgba(219, 198, 4, 0.5);
-}
-/* test */
-* {
-  border: 1px solid red;
+  box-shadow: inset 0 0 3rem rgba(219, 198, 4, 0.5);
 }
 
-.container {
-  border: 2px solid black;
-}
 
 @keyframes shake {
   0% {
@@ -84,11 +83,11 @@ h1,
 }
 @keyframes large {
   from {
-    color: black;
+    color: white;
     transform: rotate(0deg) scale(0.5);
   }
   to {
-    color: yellow;
+    color: rgb(255, 230, 0);
     transform: rotate(360deg) scale(1.2);
   }
 }

@@ -1,7 +1,7 @@
 // query selectors
 const timer = document.querySelector(".timer");
 const title = document.querySelector("h1");
-const originalTitle = title.textContent;
+let originalTitle = title.textContent;
 
 // event listener on page load
 document.addEventListener("DOMContentLoaded", startTimer);
@@ -70,17 +70,21 @@ function calcNow() {
 }
 
 function startTimer() {
-  calcNow()
+  calcNow();
   setInterval(calcNow, 1000);
 }
 
 function addSpans() {
-  const titleArr = Array.from(originalTitle);
-  let spans = "";
-  titleArr.forEach(letter => {
-    spans += `<span class="span-letter">${letter}</span>`;
+  let titleArr = Array.from(originalTitle);
+  titleArr = titleArr.map(letter => {
+    if (letter === " ") {
+      letter = "&nbsp;";
+      return `<span class="span-letter">${letter}</span>`;
+    } else {
+      return `<span class="span-letter">${letter}</span>`;
+    }
   });
-  title.innerHTML = spans;
+  title.innerHTML = titleArr.join("");
 }
 
 function removeSpans() {
