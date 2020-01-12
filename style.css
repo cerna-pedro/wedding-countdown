@@ -1,0 +1,23 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  height: 100%;
+}
+
+/* test */
+*{
+  border: 1px solid red
+}
+
+.container {
+  border: 2px solid black;
+}
+
+body {
+  border: 5px solid blue;
+  min-height: 100%;
+}
