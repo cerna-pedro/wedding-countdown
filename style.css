@@ -21,6 +21,10 @@ h1 {
   text-align: center;
 }
 
+.span-word{
+  display: block;
+}
+
 .span-letter {
   display: inline-block;
   animation: shake 1s;

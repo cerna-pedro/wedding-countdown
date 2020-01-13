@@ -76,15 +76,19 @@ function startTimer() {
 
 function addSpans() {
   let titleArr = Array.from(originalTitle);
-  titleArr = titleArr.map(letter => {
+  let span = ''
+  titleArr.forEach(letter => {
     if (letter === " ") {
       letter = "&nbsp;";
-      return `<span class="span-letter">${letter}</span>`;
+      span +=`<span class="span-letter">${letter}</span>`;
     } else {
-      return `<span class="span-letter">${letter}</span>`;
+      span +=`<span class="span-letter">${letter}</span>`;
     }
   });
-  title.innerHTML = titleArr.join("");
+  span = '<span class="span-word">' + span + '</span>'
+  
+  console.log(span)
+  title.innerHTML = span
 }
 
 function removeSpans() {
