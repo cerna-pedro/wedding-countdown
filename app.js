@@ -11,7 +11,7 @@ title.addEventListener("mouseleave", removeSpans);
 // functions
 
 function calcNow() {
-  const weddingDate = new Date("10/10/2020 4:30 pm");
+  const weddingDate = new Date("04/09/2021 4:30 pm");
   const weddingYear = weddingDate.getFullYear();
   const weddingMonth = weddingDate.getMonth();
   const weddingDay = weddingDate.getDate();
